@@ -19,13 +19,13 @@ const Dropbtn = ({ btnName, btnIcon, listData =[] }) => {
       ref={dropRef}
        className="Dropdown relative flex justify-center"
     >
-        <button onClick={()=>setDropOpen(!dropOpen)} className="px-10 border border-slate-700 rounded-lg w-60 h-full flex justify-between items-center">
+        <button onClick={()=>setDropOpen(!dropOpen)} className="p-2 border border-slate-700 rounded-lg w-40 h-full flex justify-center gap-4 items-center">
             <h1 className="">{btnName}</h1>
       <div className="text-center">{btnIcon}</div>
         </button>
       
 {dropOpen && (
-      <div className="list  absolute w-60  px-2 py-2 rounded-lg top-12   border border-slate-700">
+      <div className="list  absolute w-40  px-2 py-2 rounded-lg top-12 bg-[#0D1117]  border border-slate-700">
         
           <ul>
             {listData.map((item,index) => (

@@ -2,7 +2,7 @@ import React from "react";
 
 const StatCards = ({ statData }) => {
   return (
-    <div className="py-3 flex justify-center w-60 h-40 rounded-lg  bg-[#161B22]">
+    <div className="py-3 flex justify-center w-60 h-40 rounded-lg  bg-[#161B22] hover:scale-[1.1] transition hover:border">
       {statData.map((item, index) => (
         <div key={index} className="card flex flex-col justify-center items-center">
           <div className="flex gap-4 items-center">
@@ -11,7 +11,7 @@ const StatCards = ({ statData }) => {
 
           </div>
         
-          <div className="numbers text-blue-700 mt-8 text-4xl font-bold">{item.number}</div>
+          <div className="numbers text-blue-700 mt-8 text-5xl font-bold">{item.number}</div>
         </div>
       ))}
     </div>

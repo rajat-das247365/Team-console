@@ -8,6 +8,7 @@ import StatCards from './StatCards';
 import { IoShieldCheckmark } from "react-icons/io5";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
+import { FaUsersSlash } from "react-icons/fa";
 
 
 
@@ -71,11 +72,21 @@ const statData4 = [
 }
   
 ]
+const statData5 = [
+  {
+    title:"Inactive users",
+    number:"70",
+    icon: <FaUsersSlash />
+
+
+}
+  
+]
 const Home = () => {
   return (
-    <div>
-    <div className='w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-slate-300 gap-6 mt-6 px-4'>
-      <div className="search flex items-center gap-2 border border-slate-700 p-2 rounded-lg ">
+    <div className='bg-[#0D1117]'>
+    <div className='w-full flex justify-around items-center flex-wrap text-slate-300 gap-6 mt-6 px-4'>
+      <div className="w-80 search flex items-center gap-2 border border-slate-700 p-2 rounded-lg ">
         <ImSearch />
         <input className='border-none focus:outline-none w-full' type="text" placeholder='Search by name or email...' />
       </div>
@@ -84,11 +95,15 @@ const Home = () => {
       <Dropbtn listData={ListData2} btnName={"STATUS"} btnIcon={<FaChevronDown />} />
       <Filterbtn />
     </div>
-    <div className="stats w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 text-slate-300 gap-6 mt-6 px-4">
-      <StatCards statData={statData}/>
+    <div className="stats   w-full flex justify-around items-center flex-wrap text-slate-300 gap-6 mt-20">
+      <div className='w-5xl gap-10 flex-wrap flex h-80 justify-center items-center'>
+        <StatCards statData={statData}/>
       <StatCards statData={statData2}/>
       <StatCards statData={statData3}/>
+      <StatCards statData={statData5}/>
       <StatCards statData={statData4}/>
+      </div>
+      
     </div>
 </div>
 

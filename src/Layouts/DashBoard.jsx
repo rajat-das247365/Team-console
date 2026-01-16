@@ -10,7 +10,7 @@ import Settings from './Settings'
 const DashBoard = () => {
     const [sideOpen,setSideopen] = useState(false)
   return (
-    <div className='flex  min-h-screen bg-[#0D1117] overflow-hidden'>
+    <div className='flex  min-h-screen bg-[#0D1117]'>
       
       <Sidebar show = {sideOpen} />
 
