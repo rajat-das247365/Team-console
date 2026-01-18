@@ -2,7 +2,8 @@ import React from "react";
 
 const UserTableData = ({ users , onDelete, onEdit }) => {
   return (
-    <tbody>
+    
+    <tbody >
       {users.map((item, id) => (
         <tr
           key={id}
@@ -13,9 +14,13 @@ const UserTableData = ({ users , onDelete, onEdit }) => {
             <p className="px-6 text-sm text-slate-600">{item.email}</p>
           </div>
 
-          <td className="px-6 text-sm">{item.role}</td>
-          <td className="px-6 text-sm">{item.status}</td>
-          <div className=" w-28 flex justify-around h-14 items-center">
+<td className="px-6 py-3 text-sm hidden md:table-cell">
+  {item.role}
+</td>
+<td className="px-6 py-3 text-sm hidden md:table-cell">
+  {item.status}
+</td>
+          <div className="flex gap-2 md:flex-row flex-col w-28  justify-around h-14 items-center">
             <div className="">
               <button onClick={()=> onEdit(item)} className="border border-slate-700 p-3 hover:bg-[#0D1117]  text-xl text-indigo-600">{item.actions}</button>
             </div>
@@ -26,6 +31,7 @@ const UserTableData = ({ users , onDelete, onEdit }) => {
         </tr>
       ))}
     </tbody>
+    
   );
 };
 
