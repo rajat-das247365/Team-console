@@ -6,6 +6,7 @@ import Home from './Home'
 import { Route, Routes } from 'react-router-dom'
 import User from './User'
 import Settings from './Settings'
+import AddUser from '../components/pages/AddUser'
 
 const DashBoard = () => {
     const [sideOpen,setSideopen] = useState(false)
@@ -22,6 +23,7 @@ const DashBoard = () => {
       <Route path = '/settings' element = {<Settings />} />
       </Routes>
       </div>
+      
     </div>
   )
 }

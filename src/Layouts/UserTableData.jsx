@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserTableData = ({ users , onDelete }) => {
+const UserTableData = ({ users , onDelete, onEdit }) => {
   return (
     <tbody>
       {users.map((item, id) => (
@@ -17,7 +17,7 @@ const UserTableData = ({ users , onDelete }) => {
           <td className="px-6 text-sm">{item.status}</td>
           <div className=" w-28 flex justify-around h-14 items-center">
             <div className="">
-              <button  className="border border-slate-700 p-3 hover:bg-[#0D1117]  text-xl text-indigo-600">{item.actions}</button>
+              <button onClick={()=> onEdit(item)} className="border border-slate-700 p-3 hover:bg-[#0D1117]  text-xl text-indigo-600">{item.actions}</button>
             </div>
             <div  className=" ">
               <button onClick={()=> onDelete(item)} className=" text-xl text-red-600 border border-slate-700 p-3 hover:bg-[#0D1117]">{item.actions2}</button>
