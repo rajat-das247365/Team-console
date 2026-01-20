@@ -16,7 +16,7 @@ const Sidebar = ({show}) => {
 
   return (
   <div className={`md:block ${show? "block":"hidden"}`}>
-  <div className=" text-slate-300 md:w-2xs h-full  border-r border-slate-700">
+  <div className=" text-slate-300 md:w-2xs min-h-screen  border-r border-slate-700">
 
     {/*logo */}
     <div className=" logo md:text-xl h-20 border-b border-slate-700  flex justify-center items-center gap-2">
@@ -49,15 +49,16 @@ const Sidebar = ({show}) => {
         Settings
       </NavLink>
 
-      <NavLink to="/logout" className={navClass}>
+      <button className="flex items-center gap-3 px-4 py-3 mx-2 rounded-lg font-semibold transition  
+       text-slate-400 hover:text-[#3687FE] hover:bg-[#1f242c]">
         <MdLogout className="text-lg" />
         Logout
-      </NavLink>
+      </button>
     </div>
     {/*navlinks */}
 
   </div>
-  </div>
+ </div>
   )
 };
 

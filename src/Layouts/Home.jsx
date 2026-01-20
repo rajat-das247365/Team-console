@@ -10,6 +10,10 @@ import { MdAdminPanelSettings } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
 import { FaUsersSlash } from "react-icons/fa";
 import AddUser from '../components/pages/AddUser';
+import { SiMicroeditor } from "react-icons/si";
+import { FaStreetView } from "react-icons/fa6";
+
+
 
 
 
@@ -83,6 +87,28 @@ const statData5 = [
 }
   
 ]
+const statData6 = [
+  {
+    title:"Editors",
+    number:"15",
+    icon: <SiMicroeditor />
+
+
+
+}
+  
+]
+const statData7 = [
+  {
+    title:"Viewers",
+    number:"1,200",
+    icon: <FaStreetView />
+
+
+
+}
+  
+]
 const Home = () => {
   return (
     <div className='bg-[#0D1117]'>
@@ -94,6 +120,8 @@ const Home = () => {
       <StatCards statData={statData3}/>
       <StatCards statData={statData5}/>
       <StatCards statData={statData4}/>
+      <StatCards statData={statData6}/>
+      <StatCards statData={statData7}/>
       </div>
     
       

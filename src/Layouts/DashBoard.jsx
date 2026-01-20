@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom'
 import User from './User'
 import Settings from './Settings'
 import AddUser from '../components/pages/AddUser'
+import AddUserbtn from './AddUserbtn'
 
 const DashBoard = () => {
     const [sideOpen,setSideopen] = useState(false)
