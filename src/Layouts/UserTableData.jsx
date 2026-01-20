@@ -20,7 +20,7 @@ const UserTableData = ({ users , onDelete, onEdit }) => {
 <td className="px-6 py-3 text-sm hidden md:table-cell">
   {item.status}
 </td>
-          <div className="flex gap-2 md:flex-row flex-col w-28  justify-around h-14 items-center">
+          <div className="flex gap-2 w-28  justify-around h-14 items-center">
             <div className="">
               <button onClick={()=> onEdit(item)} className="border border-slate-700 p-3 hover:bg-[#0D1117]  text-xl text-indigo-600">{item.actions}</button>
             </div>

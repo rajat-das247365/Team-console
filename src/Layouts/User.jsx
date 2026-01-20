@@ -4,6 +4,8 @@ import { FaPen } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { MdCancel } from "react-icons/md";
+import AddUser from "../components/pages/AddUser";
+import AddUserbtn from "./AddUserbtn";
 
 const users = [
   {
@@ -84,6 +86,17 @@ const User = () => {
   const [role, setRole] = useState("");
   const [filter, setFilter] = useState("");
   const [openEdit, setOpenEdit] = useState(false);
+
+{/*add user */}
+const [openAddUser, setOpenAddUser] = useState(false);
+const handleAddUser = (newUser)=>{
+setUserList ((prev)=>[...prev,newUser]);
+setOpenAddUser(false)
+}
+
+{/*add user */}
+
+  {/*edit user functionality */}
   const [editForm, setEditForm] = useState({
     user: "",
     role: "",
@@ -109,6 +122,7 @@ const User = () => {
   setOpenEdit(false);
   setSelectUser(null);
   }
+  {/*edit user functionality */}
 
   const handleDeleteClick = (user) => {
     setSelectUser(user);
@@ -163,14 +177,14 @@ const User = () => {
           <option value="Pending">Pending</option>
         </select>
       </div>
-      <div className="table sm:w-2xl md:w-3xl  lg:w-6xl bg-[#161B22]  rounded-lg  border border-slate-700 ">
+      <div className="table w-2xl   lg:w-6xl bg-[#161B22]  rounded-lg  border border-slate-700 ">
         <table className="w-full  text-left  ">
           <thead className="h-14 border border-b-slate-700 border-t-0 border-l-0 border-r-0">
             <tr className="p-2">
               <th className="px-6">User</th>
               <th className="px-6">Role</th>
-              <th className="px-6">Status</th>
-              <th className="px-6">Actions</th>
+              <th className="px-6 hidden md:table-cell">Status</th>
+              <th className="px-6 hidden md:table-cell">Actions</th>
             </tr>
           </thead>
           <UserTableData
@@ -178,9 +192,12 @@ const User = () => {
             onDelete={handleDeleteClick}
             onEdit={handleEditClick}
           />
+          
         </table>
+       
       </div>
-
+ <AddUser open={openAddUser} setOpen={setOpenAddUser} onSave={handleAddUser}/>
+ <AddUserbtn setOpen={setOpenAddUser}/>
       {/*modal box */}
       {openModel && (
         <div className="flex-col absolute  p-5 backdrop-blur-md  rounded-xl flex justify-center items-center border border-slate-600">
